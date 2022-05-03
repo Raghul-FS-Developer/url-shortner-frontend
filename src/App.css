@@ -1,38 +1,68 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+.boxs{
+  -webkit-box-shadow: 1px -1px 5px 0px rgba(0,0,0,0.89); 
+box-shadow: 1px -1px 5px 0px rgba(0,0,0,0.89);
+}
+.img{
+  background-image: url("https://crud008.s3.amazonaws.com/6e3f448f-68f7-41cf-b7c8-c07671767233.jpg");
+ width: 1500px !important;
+ background-position:1300px ;
+ background-position-y: 610px;
+ height: 450px;
+ 
+
+}
+.ft{
+  font-family: 'Bree Serif', serif;
+}
+.use{
+  max-width: 350px !important;
+  overflow-x: scroll;
+}
+.bs{
+  color: black !important;
+}
+.user{
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  width: 200px;
+  margin-top: 50px;
   text-align: center;
+  margin-left: 10px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.table{
+ text-align: center;
+ margin: 10px;
+width:1200px
+}.mains{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.create{
+  margin-top: 50px;
+ text-align:end;
+ width: 800px;
 }
+.short{
+  
+  width: 700px;
+  margin: auto !important;
+  margin-top: 100px !important;
+}
+.details{
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  margin: auto;
+  margin-top:20px;
+ margin-bottom: 20px;
+  
+  max-width: 500px;
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+
+}
+.cards{
+  overflow: hidden;
+  padding-bottom: 0px !important;
+  height: 450px !important;
 }
