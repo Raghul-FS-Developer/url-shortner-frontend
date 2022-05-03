@@ -1,4 +1,4 @@
-URL = 'http://localhost:4000/'
+URL = 'https://backurl.herokuapp.com/'
 
 
 export default URL
