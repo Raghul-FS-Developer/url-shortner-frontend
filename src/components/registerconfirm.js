@@ -9,7 +9,7 @@ function RegisterConfirm() {
         getdata()
        },[])
        
-    const[work,setWork]=useState(null)
+    const[work,setWork]=useState(true)
     
     let navigate=useNavigate()
     let params = useParams();
