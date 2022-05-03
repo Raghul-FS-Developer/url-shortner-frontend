@@ -42,6 +42,7 @@ function Signup() {
                       className="form-control"
                       type="text"
                       id='name'
+                      placeholder='Enter your name'
                       onChange={(e)=>setName(e.target.value)}
                       required
                     />
@@ -55,6 +56,7 @@ function Signup() {
                       className="form-control"
                       type="email"
                       id='email'
+                      placeholder='Enter your email'
                       onChange={(e)=>setEmail(e.target.value)}
                       required
                     />
@@ -67,6 +69,7 @@ function Signup() {
                       className="form-control"
                       type="password"
                       id='password'
+                      placeholder='Enter your password'
                       onChange={(e)=>setpassword(e.target.value)}
                       required
                       minLength={8}

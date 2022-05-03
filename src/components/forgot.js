@@ -42,6 +42,7 @@ function Forgot() {
                       className="form-control"
                       type="email"
                       id='email'
+                      placeholder='Enter your Email'
                       onChange={(e)=>setEmail(e.target.value)}
                       required
                     />

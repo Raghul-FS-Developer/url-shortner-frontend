@@ -48,6 +48,7 @@ function SignIn({myStorage ,setLogged}) {
                       className="form-control"
                       type="email"
                       id='email'
+                      placeholder='Enter your email'
                       onChange={(e)=>setEmail(e.target.value)}
                       required
                     />
@@ -60,6 +61,7 @@ function SignIn({myStorage ,setLogged}) {
                       className="form-control"
                       type="password"
                       id='password'
+                      placeholder='Enter your password'
                       onChange={(e)=>setpassword(e.target.value)}
                       required
                       minLength={8}
