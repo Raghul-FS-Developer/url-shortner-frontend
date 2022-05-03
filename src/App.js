@@ -24,16 +24,20 @@ function App() {
   
   
     <Routes>
-
+       {logged && (
+         <>
       <Route path='/summary' element={<Summary myStorage={myStorage}/>}/>
       <Route path='/url' element={<UrlShortner myStorage={myStorage}/>}/>
-    
+      </>
+      )}
+      {!logged &&(<>
       <Route path='/' element={<Home/>}/>
       <Route path='/signin' element={<SignIn setLogged={setLogged} myStorage={myStorage}/>}/>
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/forgot' element={<Forgot/>}/>
       <Route path ='/register-confirm/:token' element={<RegisterConfirm/>}/>
       <Route path='/confirm/:token' element={<ForgotConfirm/>}/>
+      </>)}
     </Routes>
  
   
