@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState} from 'react'
 import { useParams } from 'react-router-dom'
-
+import URL from '../db'
 import { useNavigate } from 'react-router-dom'
 
 function ForgotConfirm() {
@@ -17,7 +17,7 @@ const[confirmpassword,setConfirmpassword]=useState("")
     
     if(password === confirmpassword){
         
-       let res = await axios.post(`http://localhost:4000/verify/${params.token}`,{
+       let res = await axios.post(`${URL}verify/${params.token}`,{
        password:password})
 
 
@@ -54,6 +54,7 @@ const[confirmpassword,setConfirmpassword]=useState("")
                        className="form-control"
                        type="password"
                        id='newpassword'
+                       placeholder='Enter your New password'
                        onChange={(e)=>setPassword(e.target.value)}
                        required
                        minLength={8}
@@ -68,6 +69,7 @@ const[confirmpassword,setConfirmpassword]=useState("")
                        className="form-control"
                        type="password"
                        id='password'
+                       placeholder='Enter your Confirm password'
                        onChange={(e)=>setConfirmpassword(e.target.value)}
                        required
                        minLength={8}
