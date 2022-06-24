@@ -29,7 +29,7 @@ function Forgot() {
       
               <div className="text-center">
                 <h3 className="display-5">Forgot Password?</h3>
-                <p>please Provide your registered Email</p>
+                <p>Please Provide Your Registered Email</p>
               </div>
                <div className="p-3">
                 <form onSubmit={handleSubmit}>

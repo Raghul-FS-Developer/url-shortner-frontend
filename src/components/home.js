@@ -18,7 +18,7 @@ const navigate = useNavigate()
         <div className="lead display-1">Welcome To UrlShortner</div>
       </div>
       <div className="p-5 display-6 text-danger col">
-        <p>Here you can create shortUrl for a LongUrl</p>
+        <p>Here You Can Create ShortUrl For A LongUrl</p>
       </div>
     </div>
     </div>
