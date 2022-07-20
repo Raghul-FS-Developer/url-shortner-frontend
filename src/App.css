@@ -4,7 +4,7 @@
 box-shadow: 1px -1px 5px 0px rgba(0,0,0,0.89);
 }
 .img{
-  background-image: url("https://crud008.s3.amazonaws.com/6e3f448f-68f7-41cf-b7c8-c07671767233.jpg");
+  background-image: url('./img/home.jpg');
  width: 1500px !important;
  background-position:1300px ;
  background-position-y: 610px;

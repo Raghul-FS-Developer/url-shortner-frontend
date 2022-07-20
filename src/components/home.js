@@ -14,11 +14,13 @@ const navigate = useNavigate()
       id="homePage"
     >
      <div className='img'>
+      
       <div className="p-5 col">
         <div className="lead display-1">Welcome To UrlShortner</div>
       </div>
       <div className="p-5 display-6 text-danger col">
         <p>Here You Can Create ShortUrl For A LongUrl</p>
+ 
       </div>
     </div>
     </div>
