@@ -3,19 +3,20 @@ import React, { useState} from 'react'
 import { useParams } from 'react-router-dom'
 import URL from '../db'
 import { useNavigate } from 'react-router-dom'
-
+import {ToastContainer,toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 function ForgotConfirm() {
 const navigate=useNavigate()
 const params=useParams()
 
- const[msg,setMsg]=useState("")
+
 const[password,setPassword]=useState("")
 const[confirmpassword,setConfirmpassword]=useState("")
 
  let handleSubmit=async(e)=>{
    e.preventDefault()
-    
-    if(password === confirmpassword){
+   const id = toast.loading("Changing password...")
+   if(password === confirmpassword){
         
        let res = await axios.post(`${URL}verify/${params.token}`,{
        password:password})
@@ -23,21 +24,23 @@ const[confirmpassword,setConfirmpassword]=useState("")
 
     if(res.data.statuscode==200){
       
-     navigate("/signin")
-     alert("password changed successfully")
-    
+      toast.update(id,{render:"password changed successfully",type:"success",isLoading:false,closeButton:true,autoClose:true})
+      setTimeout(()=>navigate("/signin"),1000)
+      
     }else{
-        setMsg(res.data.message)
+      toast.update(id,{render:res.data.message,type:"error",isLoading:false,closeButton:true,autoClose:true})
+      
     }
-}else{
-     setMsg("Password Doesn't Match")
+  }else{
+  toast.update(id,{render:"Password Doesn't Match",type:"error",isLoading:false,closeButton:true,autoClose:true,delay:500})
+
     }
 }
 
   return (
     <>
    <div className="details">
-     
+     <ToastContainer pauseOnFocusLoss={false} limit={3} autoClose={2000}/>
      <div className="card-body">
        
                <div className="text-center">
@@ -77,7 +80,7 @@ const[confirmpassword,setConfirmpassword]=useState("")
                      />
                    
                    </div>
-                   <p className='text-danger'>{msg}</p>
+    
                    <div className="">
                      <button
                        className="btn btn-success btn-lg"

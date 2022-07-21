@@ -1,21 +1,25 @@
 import axios from 'axios'
 import React ,{useState} from 'react'
-
+import {ToastContainer,toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 import '../App.css' 
 import URL from '../db'
 function Forgot() {
  
   const[email,setEmail]=useState('')
-  const[msg ,setMsg] = useState('')
+
 
   const handleSubmit=async(e)=>{
     e.preventDefault()
+    const id = toast.loading('Please wait...')
      let res = await axios.post(`${URL}forgot-password`,{email:email})
      
      if(res.data.statuscode === 200){
-       alert('check your mail for password reset link')
-     }else{
-       setMsg(res.data.message)
+       
+       toast.update(id,{render:'check your mail for password reset link',type:'success',isLoading:false,autoClose:true,closeButton:true})
+      }else{
+       toast.update(id,{render:res.data.message,type:'error',isLoading:false,autoClose:true,closeButton:true})
+
      }
   }
 
@@ -24,7 +28,7 @@ function Forgot() {
     <>
     
      <div className="details">
-     
+     <ToastContainer/>
     <div className="card-body">
       
               <div className="text-center">
@@ -47,7 +51,7 @@ function Forgot() {
                       required
                     />
                   </div>
-                 <p className='text-danger'>{msg}</p>
+        
                   <div className="">
                     <button
                       className="btn btn-success btn-lg"

@@ -3,6 +3,8 @@ import '../App.css'
 import URL from '../db'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
+import {ToastContainer,toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 function UrlShortner({myStorage}) {
 
 const navigate = useNavigate()
@@ -25,17 +27,25 @@ let email = myStorage.getItem('user')
 const[longUrl ,setLongUrl]=useState()
 const handleSubmit=async(e)=>{
   e.preventDefault()
+  const id = toast.loading('Generating short url')
   const res =await axios.post(`${URL}shortner`,{longUrl:longUrl})
-  
+
   if(res.data.statuscode === 200){
-   const res1 = await axios.post(`${URL}save`,{longurl:longUrl ,shorturl:res.data.url,email:email})
-   if(res1.data.statuscode === 200){
-     navigate('/summary')
+    const res1 = await axios.post(`${URL}save`,{longurl:longUrl ,shorturl:res.data.url,email:email})
+    if(res1.data.statuscode === 200){
+      console.log(res1)
+      toast.update(id,{render:"Url created successfully",type:'success',isLoading:false,autoClose:true,closeButton:true})
+
+    setTimeout(()=> navigate('/summary'),2000)
+   }else{
+    toast.update(id,{render:"something went wrong",type:'error',isLoading:false,autoClose:true,closeButton:true})
+
    }
   }
 } 
  return (
       <>
+      <ToastContainer/>
      <div className='mains'><h1 className='create display-1 text-info'>Create ShortUrl</h1><div className='user  p-2'><strong className='text-success'>user</strong><br/><h2 className='ft'>{newuser}</h2></div></div>
     <div className="card p-4 m-3 short">
       <form onSubmit={handleSubmit}>
