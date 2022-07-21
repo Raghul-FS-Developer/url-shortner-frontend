@@ -45,7 +45,7 @@ const handleSubmit=async(e)=>{
 } 
  return (
       <>
-      <ToastContainer/>
+      <ToastContainer autoClose={2000}/>
      <div className='mains'><h1 className='create display-1 text-info'>Create ShortUrl</h1><div className='user  p-2'><strong className='text-success'>user</strong><br/><h2 className='ft'>{newuser}</h2></div></div>
     <div className="card p-4 m-3 short">
       <form onSubmit={handleSubmit}>
