@@ -12,6 +12,7 @@ Packages I Used..!<br/>
 axios<br/>
 formik<br/>
 yup<br/>
+react-toastify<br/>
 react Router Dom<br/>
 bcryptjs<br/>
 cors<br/>
